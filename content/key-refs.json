@@ -1,0 +1,82 @@
+[
+  {
+    "key": "saycan2022",
+    "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+    "authors": "Ahn, Michael and Brohan, Anthony and Brown, Noah and Chebotar, Yevgen and Cortes, Omar and David, Byron and Finn, Chelsea and others",
+    "venue": "Conference on Robot Learning (CoRL)",
+    "year": "2022",
+    "url": ""
+  },
+  {
+    "key": "codeaspolicies2023",
+    "title": "Code as Policies: Language Model Programs for Embodied Control",
+    "authors": "Liang, Jacky and Huang, Wenlong and Xia, Fei and Xu, Peng and Hausman, Karol and Ichter, Brian and Florence, Pete and Zeng, Andy",
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "year": "2023",
+    "url": ""
+  },
+  {
+    "key": "sweagent2024",
+    "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+    "authors": "Yang, John and Jimenez, Carlos E. and Wettig, Alexander and Lieret, Kilian and Yao, Shunyu and Narasimhan, Karthik and Press, Ofir",
+    "venue": "Advances in Neural Information Processing Systems (NeurIPS)",
+    "year": "2024",
+    "url": ""
+  },
+  {
+    "key": "voyager2024",
+    "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+    "authors": "Wang, Guanzhi and Xie, Yuqi and Jiang, Yunfan and Mandlekar, Ajay and Xiao, Chaowei and Zhu, Yuke and Fan, Linxi and Anandkumar, Anima",
+    "venue": "Transactions on Machine Learning Research (TMLR)",
+    "year": "2024",
+    "url": ""
+  },
+  {
+    "key": "alrm2026",
+    "title": "ALRM: Agentic LLM for Robotic Manipulation",
+    "authors": "Gaboardi dos Santos, Vitor and Khadraoui, Ibrahim and Farhat, Ibrahim and others",
+    "venue": "arXiv:2601.19510",
+    "year": "2026",
+    "url": ""
+  },
+  {
+    "key": "capx2026",
+    "title": "CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation",
+    "authors": "Fu, Letian and Yu, Justin and El-Refai, Karim and Kou, Ethan and Xue, Haoru and Huang, Huang and others",
+    "venue": "International Conference on Machine Learning (ICML)",
+    "year": "2026",
+    "url": ""
+  },
+  {
+    "key": "skillsbench2026",
+    "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+    "authors": "Li, Xiangyi and Liu, Yimin and Chen, Wenbo and others",
+    "venue": "arXiv:2602.12670",
+    "year": "2026",
+    "url": ""
+  },
+  {
+    "key": "rekep2024",
+    "title": "ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation",
+    "authors": "Huang, Wenlong and Wang, Chen and Li, Yunzhu and Zhang, Ruohan and Fei-Fei, Li",
+    "venue": "Conference on Robot Learning (CoRL)",
+    "year": "2024",
+    "url": ""
+  },
+  {
+    "key": "lips2026kil",
+    "title": "On the Generalization Capabilities, Design Choices and Limitations of Keypoint Imitation Learning",
+    "authors": "Thomas Lips and Marco Moletta and Michael C. Welle and Danica Kragic and Francis wyffels",
+    "venue": "arXiv:2605.26649",
+    "year": "2026",
+    "url": ""
+  },
+  {
+    "key": "aspire2026",
+    "title": "ASPIRE: Agentic Skills Discovery for Robotics",
+    "authors": "Lu, Runyu and Wu, Yubo and Kou, Ethan and Fu, Letian and Xiao, Wenli and Mandlekar, Ajay and Xu, Yinzhen and Shi, Guanya and Goldberg, Ken and Chen, Ang and Chowdhury, Mosharaf and Zhu, Yuke and Fan, Linxi and Wang, Guanzhi",
+    "venue": "arXiv:2607.00272",
+    "year": "2026",
+    "url": ""
+  }
+]

@@ -1,0 +1,41 @@
+{
+ "source": "officedog-writing/sections/method.tex TABLE skills; line counts verified against SKILL.md files in the sha 41cc8d2 run archives",
+ "skills": [
+  {
+   "name": "grasp-a-cup",
+   "lines": 208,
+   "game": "Cups",
+   "procedure": "Pick one cup: measure the color window live, locate by depth evidence, touch the top, grasp at the pad band with two closes, check the lift."
+  },
+  {
+   "name": "stack-two-cups",
+   "lines": 192,
+   "game": "Cups",
+   "procedure": "Stack one cup on another: locate both, grasp, find the release height by force, verify from a profile view."
+  },
+  {
+   "name": "grasp-a-cylinder",
+   "lines": 187,
+   "game": "Sorter",
+   "procedure": "Pick a cylinder: read its orientation from the silhouette, center it with or without depth, check the stall width."
+  },
+  {
+   "name": "insert-into-a-hole",
+   "lines": 324,
+   "game": "Sorter",
+   "procedure": "Insert into the round hole: identify the hole, measure it parallax-free, find the face by touch, use a force-free descent as the alignment test, verify by look."
+  },
+  {
+   "name": "grasp-a-ring",
+   "lines": 182,
+   "game": "Rings",
+   "procedure": "Pick a flat ring at the jaw's span limit: locate by color, straddle with a force-watched open-jaw descent, check the stall width."
+  },
+  {
+   "name": "put-a-ring-on-a-rod",
+   "lines": 277,
+   "game": "Rings",
+   "procedure": "Thread the held ring onto the rod: find the tip by its marker, predict the ground-out height, verify by a force-free descent and a top-down look."
+  }
+ ]
+}

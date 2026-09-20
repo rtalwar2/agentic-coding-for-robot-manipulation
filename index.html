@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Generalizing Manipulation Skills with a Local Coding Agent</title>
+<meta name="description" content="A locally served Qwen3.8-27B drives a UR3e arm from a coding-agent harness and generalizes hand-written manipulation skills to new colours, sizes, shapes and task variations. 30 of 45 trials on physical hardware. IDLab-AIRO, Ghent University – imec.">
+<meta property="og:title" content="Generalizing Manipulation Skills with a Local Coding Agent">
+<meta property="og:description" content="A locally served Qwen3.8-27B drives a UR3e arm from a coding-agent harness and generalizes hand-written manipulation skills to new colours, sizes, shapes and task variations on real hardware. 30 of 45 trials.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://img.youtube.com/vi/09Z0gJm21E4/maxresdefault.jpg">
+<link rel="icon" href="assets/logos/brand/airo-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top"><img class="mark light-only" src="assets/logos/brand/airo-icon.svg" alt=""><img class="mark dark-only" src="assets/logos/brand/airo-icon-white.png" alt="">AIRO</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#what">What we did</a>
+      <a href="#takeaways">Takeaways</a>
+      <a href="#overview">Abstract</a>
+      <a href="#system">System</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#results">Results</a>
+      <a href="#secondpass">Second pass</a>
+      <a href="#limitations">Failures</a>
+      <a href="#trials">Trials</a>
+      <a href="#skills">Skills</a>
+      <a href="#paper">Paper</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Submitted to ICRA 2027</div>
+        <h1>Generalizing Manipulation Skills with a <em>Local Coding Agent</em></h1>
+        <p class="authors">
+          <a href="https://airo.ugent.be" rel="author">Raman Talwar</a><sup>*</sup>,
+          <a href="https://airo.ugent.be" rel="author">Elias Nijs</a><sup>*</sup>,
+          <a href="https://airo.ugent.be" rel="author">Andreas Verleysen</a>,
+          <a href="https://airo.ugent.be" rel="author">Francis wyffels</a>
+        </p>
+        <p class="affil"><a href="https://airo.ugent.be">IDLab-AIRO</a>, Ghent University – imec &nbsp;·&nbsp; <sup>*</sup>equal contribution</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="assets/paper.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Paper (PDF)</a>
+          <a class="btn" href="https://mega.nz/folder/g3ol2bbQ#FSywvRtXJ4Ooc8WcqLF1mg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Supplementary</a>
+          <a class="btn" href="#trials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>45 trials</a>
+          <a class="btn" href="#bibtex">BibTeX</a>
+        </div>
+      </div>
+      <div>
+        <figure class="hero-video">
+          <div class="yt"><iframe id="paper-video" src="https://www.youtube-nocookie.com/embed/09Z0gJm21E4?enablejsapi=1&rel=0&modestbranding=1" title="Generalizing Manipulation Skills with a Local Coding Agent, submission video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe></div>
+          <figcaption><span>Submission video · 3 min · <a href="https://youtu.be/09Z0gJm21E4" target="_blank" rel="noopener">YouTube</a></span><span>qwen3.8-27b · local</span></figcaption>
+        </figure>
+        <ol class="hero-chapters" id="chapters" aria-label="Video chapters"></ol>
+      </div>
+    </div>
+
+    <div class="stats" id="stats">
+      <div class="stat"><div class="v num">30<small>/ 45</small></div><div class="l">trials completed without any operator intervention</div></div>
+      <div class="stat"><div class="v num">9<small>tasks</small></div><div class="l">from 3 children's games; the agent knew each game through 2 hand-written skills</div></div>
+      <div class="stat"><div class="v num">27<small>B</small></div><div class="l">Qwen3.8-27B served locally on a single workstation, no cloud</div></div>
+      <div class="stat"><div class="v num">0.48<small>×</small></div><div class="l">duration and tool calls on a second pass of a solved task</div></div>
+      <div class="stat"><div class="v num">15.8<small>h</small></div><div class="l">of robot time, 3.18 M output tokens, 1,034 motion commands</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ WHAT WE DID ============ -->
+<section class="sec what" id="what">
+  <div class="wrap">
+    <h2 class="sr-only">What we did</h2>
+    <div class="what-grid">
+      <figure>
+        <h3>Real hardware</h3>
+        <img src="assets/what/cell.webp" alt="The UR3e cell with the shape sorter on the table" width="1200" height="675" loading="lazy">
+        <figcaption>One UR3e cell with a wrist camera. Qwen3.8-27B served locally on the same workstation.</figcaption>
+      </figure>
+      <figure>
+        <h3>Six skills</h3>
+        <div class="skill-tile" aria-label="Excerpt of a skill document"><span class="k">grasp-a-cup</span>
+The numbers below were measured on
+one instance of this task. They are
+wrong for any other instance -
+re-measure them; the <b>procedure is
+what transfers.</b>
+
+grasp TCP z   -0.016 (pad-band)
+stall width   0.0373, held after lift
+HSV, body     H 104-107 S 222-255</div>
+        <figcaption>Two hand-written skills per game, one object instance each, 1,370 lines in total.</figcaption>
+      </figure>
+      <figure>
+        <h3>Nine tasks</h3>
+        <img src="assets/what/tasks-mosaic.webp" alt="Wrist-camera views of the nine completed tasks" width="1212" height="687" loading="lazy">
+        <figcaption>Three toys, nine variations in colour, size, shape and task. No new code or training per task.</figcaption>
+      </figure>
+      <figure>
+        <h3>45 trials</h3>
+        <img src="assets/what/trials-mosaic.webp" alt="Final wrist-camera frames of 24 trials" width="1950" height="738" loading="lazy">
+        <figcaption>Five trials per task, plus 17 second passes. 15.8 robot-hours, 3.18 M output tokens, all logged.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAKEAWAYS ============ -->
+<section class="sec" id="takeaways">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">For roboticists</div><h2>What this study says</h2></div>
+      <p class="lede">A 27B open-weight model on one workstation, given a coding harness, nine motion and perception primitives and a hand-written procedure for one object, generalized that procedure to new colours, sizes, shapes and task compositions on real hardware in 30 of 45 trials.</p>
+    </div>
+    <ol class="takeaways">
+      <li>
+        <h3>A local coding agent can generalize a documented procedure to objects it has only read about</h3>
+        <p>With the interface, the model and the skill text held fixed, Qwen3.8-27B completed 30 of 45 trials without intervention. It generalized across colour and size in 20 of 25 cup trials, inserted every unseen peg at least once, and rebuilt the five-ring tower in three of five trials, writing its own perception code with classical computer vision on one workstation.</p>
+      </li>
+      <li>
+        <h3>The failures are misread scenes, anchoring on them, and not knowing where its body is</h3>
+        <p>From a single wrist camera the agent took the square hole for the rectangular one and a standing prism for a lying one. Once wrong, it re-measured instead of re-questioning its assumption, which turned a wrong label into an hour-long trial. The platform guards only the tool centre point, so a rotated tool or a wrongly opened gripper passed every check and ended in a protective stop. Seven protective stops and one emergency stop in total.</p>
+      </li>
+      <li>
+        <h3>It is not fast enough yet, and time is bimodal</h3>
+        <p>A cup task takes 4 to 14 minutes and a sorter task 30 to 60. About 80% of output tokens are reasoning, not the robot moving. A trial that gets its first placement right runs in minutes; one that does not spends its remaining budget in the re-measure loop.</p>
+      </li>
+      <li>
+        <h3>A second pass on a solved task halves the cost, so let the agent learn the task before relying on it</h3>
+        <p>Resuming the session on a rearranged scene cut tool calls in half and output tokens to a third, and fast trials stayed fast. This is in-session reuse rather than persistent learning; the paper's next steps are adding sensing to fix perception and body awareness, and a learning phase that consolidates experience into skills.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="sec" id="overview">
+  <div class="wrap">
+    <div class="two-col" style="grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)">
+    <div class="prose">
+        <div class="eyebrow">Overview</div>
+        <h2 style="margin:.4rem 0 1.2rem">Abstract</h2>
+        <p>Today, progress in open-weight language models enables systems capable of writing, executing and debugging code while still running on a single workstation. Most language-driven robots give the model a fixed action interface or a trained policy. Generalizing to a new task therefore means more engineering effort or more data collection, both time-consuming.</p>
+        <p>We investigate whether a local open-weight vision-language model can control a robot and one-shot generalize to new variations of a task without new human programming or training. We let a local open-weight VLM, Qwen3.8-27B, drive a UR3e robotic arm from a coding-agent harness. It writes and runs its own code above a service that implements kinematics, safety limits and classic computer vision techniques.</p>
+        <p>We test it on nine tasks built from children's toys designed to probe generalization across colour, size, shape, and task variation. With five trials for each task, we observe generalization in 30 out of 45 trials with durations ranging from 3.4 to 67.5 minutes depending on task complexity. Asking the agent to redo a task after a successful completion halves the duration, indicating self-improvement over time. Finally, we expose the limitations of a local coding agent. We believe that solving those limitations, combined with further investigation of self-improvement, points at a direct path toward real-world deployment of a local coding agent.</p>
+      </div>
+      <figure class="base-tasks">
+        <div class="panel"><img src="assets/base-cups.webp" alt="Scene camera: two blue cups on the table" width="960" height="540" loading="lazy"><span class="chip game-Cups">Cups</span><span class="lbl">stack the small blue cup on the large blue cup</span></div>
+        <div class="panel"><img src="assets/base-sorter.webp" alt="Scene camera: the shape sorter with the red cylinder" width="960" height="540" loading="lazy"><span class="chip game-Sorter">Sorter</span><span class="lbl">insert the red cylinder into the round hole</span></div>
+        <div class="panel"><img src="assets/base-rings.webp" alt="Scene camera: the teal ring beside the rod" width="960" height="540" loading="lazy"><span class="chip game-Rings">Rings</span><span class="lbl">put the teal ring on the rod</span></div>
+        <figcaption>The three base tasks the skills describe. Every task on this page is a variation of one of these.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEM ============ -->
+<section class="sec" id="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Method</div><h2>System</h2></div>
+      <p class="lede">The <b>platform</b> owns the robot and everything whose correctness must not depend on the model. The <b>agent setup</b> is the model, prompt, tools, skills and manual, configured once per robot. Each <b>session</b> gets a fresh workspace where the model reads, writes and runs code. Invariant hardware facts live in the platform; facts about one object live in a skill and are re-measured in the session.</p>
+    </div>
+    <div class="arch">
+      <div class="stack" id="stack">
+        <div class="layer model" role="button" tabindex="0" data-k="model"><div class="t">Model + harness <span class="mono">qwen3.8-27b · pi</span></div><div class="d">reasons, executes tool calls, writes and executes scripts</div></div>
+        <div class="layer" role="button" tabindex="0" data-k="prompt"><div class="t">System prompt <span class="mono">68 lines</span></div><div class="d">tells the model it operates this robot; biases it towards measure-act-verify loops and script files over one-liners</div></div>
+        <div class="ws">
+          <span class="lbl">workspace · fresh copy per session</span>
+          <div class="layer" role="button" tabindex="0" data-k="skills"><div class="t">Skills <span class="mono">2 per game</span></div><div class="d">the procedure for one object: measured values, how each was obtained, pitfalls</div></div>
+          <div class="layer" role="button" tabindex="0" data-k="manual"><div class="t">Manual <span class="mono">617 lines</span></div><div class="d">how this robot behaves for any object: gripper and camera geometry, table height, the SDK</div></div>
+          <div class="layer" role="button" tabindex="0" data-k="scripts"><div class="t">Scripts <span class="mono">written this run</span></div><div class="d">measure the object, compute the grasp, act, check</div></div>
+        </div>
+        <div class="paths">
+          <div class="layer" role="button" tabindex="0" data-k="tools"><div class="t">Tool call <span class="mono">1 of 9 ops</span></div><div class="d">one action; its result straight into context</div></div>
+          <div class="layer" role="button" tabindex="0" data-k="sdk"><div class="t">SDK call <span class="mono">from a script</span></div><div class="d">chunks many operations into one guarded program</div></div>
+        </div>
+        <div class="arrow-row">same endpoints, same safety limits</div>
+        <div class="layer" role="button" tabindex="0" data-k="platform"><div class="t">Platform <span class="mono">one HTTP service · :8720</span></div><div class="d">owns the hardware; kinematics, workspace box, speed and force caps, motion lock, one generic colour-blob detector</div></div>
+        <div class="layer" role="button" tabindex="0" data-k="hw"><div class="t">Robot <span class="mono">UR3e · 2F-85 · D435</span></div><div class="d">fixed table, eye-in-hand calibrated wrist camera, TCP at the fingertip pinch</div></div>
+      </div>
+      <div class="arch-detail"><div class="card" id="arch-detail"></div></div>
+    </div>
+
+    <h3 style="margin-top:3rem">The nine platform operations</h3>
+    <p class="muted small" style="margin:.3rem 0 0">Available as harness tools and as a Python SDK. Both reach the same service and the same safety limits. There is no trained perception module: the platform supplies one generic detector, the model measures its colour thresholds on the live frame and writes the rest of the perception during the run.</p>
+    <div class="table-wrap">
+    <table class="ops">
+      <thead><tr><th>Operation</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>look</td><td>Capture a wrist-camera frame.</td></tr>
+        <tr><td>get_state</td><td>Proprioception: TCP pose, joints, gripper width, the TCP force-torque reading, motion-lock state.</td></tr>
+        <tr><td>move_tcp</td><td>Move the tool centre point to a Cartesian pose.</td></tr>
+        <tr><td>move_joints</td><td>Joint-space move.</td></tr>
+        <tr><td>gripper</td><td>Command width, force and speed.</td></tr>
+        <tr><td>locate_pixel</td><td>Turn one image pixel into a base-frame point via depth and the hand-eye calibration.</td></tr>
+        <tr><td>locate_objects</td><td>Fixed colour-blob detector with depth. HSV bounds are required arguments. Returns centre, top height, diameter and evidence per blob.</td></tr>
+        <tr><td>descend_to_contact</td><td>Step the tool down and stop on a force change; force is read while stationary between steps.</td></tr>
+        <tr><td>set_motion</td><td>Unlock or lock the motors. The service boots senses-only.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:2.5rem">The safety envelope</h3>
+    <p class="muted small" style="margin:.3rem 0 0">Every actuation request, from a tool or from code the model wrote, passes through the same clamps. The clamp protects the table, not objects on it, and not the robot's own body. That gap is the third failure mode below.</p>
+    <div class="limits">
+      <div class="card"><div class="k">Workspace box</div><div class="v">x ±0.37 · y −0.56…−0.10 · z −0.039…0.45 m</div><div class="n">every Cartesian target is clamped into it</div></div>
+      <div class="card"><div class="k">Gripper force</div><div class="v">25 N default · 50 N cap</div><div class="n">25 N is the driver floor; crushables are protected by a width floor</div></div>
+      <div class="card"><div class="k">Time cap</div><div class="v">4 × skill task × #objects</div><div class="n">22 min for two cups, 316 min for five rings; 2 of 45 trials hit it</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TASKS ============ -->
+<section class="sec" id="tasks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Experimental design</div><h2>Three games, nine tasks</h2></div>
+      <p class="lede">Children's toys give compact families of related tasks: the objective stays recognizable while colour, scale, shape or the task itself changes. Each game has one grasp skill and one placement skill, written for a single object instance (heavy outline). The nine tasks vary that instance along four axes.</p>
+    </div>
+    <figure class="objects card pad">
+      <div id="objects"></div>
+      <figcaption>The objects. <i>Cups</i>: twelve nesting cups, rim 36 to 85 mm, four repeating colours, stacked upside down. <i>Sorter</i>: a peg-in-hole base with about 1 mm clearance per side; difficulty is ordered by yaw symmetry. <i>Rings</i>: five rings, outer 40 to 80 mm, 2 mm clearance on the rod.</figcaption>
+    </figure>
+    <div class="tasks" id="task-cards"></div>
+    <div class="axis-legend"><span><span class="chip on">Colour</span> <span class="chip on">Size</span> <span class="chip on">Shape</span> <span class="chip on">Task</span> &nbsp;axes the task varies relative to the instance its skill documents</span><span>Hover a card to see the scene after the trial.</span></div>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section class="sec" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Results</div><h2>30 of 45 trials without intervention</h2></div>
+      <p class="lede">Trials followed a similar pattern: read the skill and manual pages, measure the scene with self-written perception scripts, write and run a pick-and-place script, verify from a predefined pose, and loop back to measuring on an error.</p>
+    </div>
+    <div class="chart-card">
+      <div class="chart-scroll"><div id="dur-chart"></div></div>
+      <div class="legend">
+        <span><i style="background:var(--surface);border:1.5px solid var(--ink-2)"></i>first-pass trial</span>
+        <span><i style="background:var(--ink)"></i>median of five</span>
+        <span><i style="background:var(--bad)"></i>ended in a stop or failure</span>
+        <span><i style="background:var(--warn)"></i>timeout</span>
+        <span><i style="background:var(--p2fast)"></i>second pass of fastest successful trial</span>
+        <span><i style="background:var(--p2slow)"></i>second pass of slowest successful trial</span>
+        <span><i class="sq" style="background:var(--bad)"></i>time cap</span>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="grid-table" id="grid-table"></table>
+    </div>
+    <p class="muted small" style="margin-top:.8rem;max-width:var(--measure)">Table as printed in the paper. <i>Success</i> counts only trials that finished without any operator intervention. Four further trials completed the task after a small intervention (an object set upright or back on the table). <i>Reas.</i> is the median share of output tokens spent on reasoning. The chart plots every individual trial, including stopped ones; the table's durations follow the paper.</p>
+    <div class="two-col" style="margin-top:2.5rem">
+      <div class="prose">
+        <h3 style="margin-top:0">What the authors attribute the successes to</h3>
+        <p>Two things, neither ablated. First, the skills document tasks as formulas and procedures with measured values; the agent used those and re-measured values when necessary. Second, verification caught failures when they happened: a stall width that did not hold after the lift proved a grasp had failed, and the agent knew to try again. The agent recovered from a faulty assumption in 10 of the 30 successful trials.</p>
+        <p>Reasoning accounted for 71% to 85% of output tokens, increasing with task complexity. The longest thinking turns followed a surprise, such as a jam or a contradiction between measurements. Trials containing them became the outliers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECOND PASS ============ -->
+<section class="sec" id="secondpass">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Second pass</div><h2>The same task again, on a rearranged scene</h2></div>
+      <p class="lede">We resumed the sessions of the fastest and slowest successful trial of each task and asked: <i>"That worked - the task was completed correctly. The scene has been reset and the objects are in new positions. Do the task again."</i> The agent kept the colour windows, object heights, the matching hole and the wrist angle that worked, and spent its effort re-locating the objects.</p>
+    </div>
+    <div class="p2grid">
+      <div class="card"><div class="big num">0.48<small>×</small></div><div class="l">wall-clock time and tool calls (734 → 354) over the 17 resumed trials</div></div>
+      <div class="card"><div class="big num">0.34<small>×</small></div><div class="l">output tokens (1,054k → 354k); reasoning share fell from 80% to 67%</div></div>
+      <div class="card"><div class="big num">6<small>/ 8</small></div><div class="l">tasks where the resume of the faster first pass was again the faster one. The quality of the plan transfers, not only the measured facts</div></div>
+    </div>
+    <details class="fold"><summary>Per-trial numbers for all 17 second passes</summary>
+    <div class="table-wrap">
+      <table class="bars" id="p2-table"></table>
+    </div></details>
+    <p class="muted small" style="margin-top:.9rem;max-width:var(--measure)">Read this as in-session reuse rather than persistent learning: resumed sessions retain conversation history, measurements and generated scripts, and the experiment does not isolate their contributions. Sixteen of seventeen second passes completed without intervention. One resumed beam trial ended in a protective stop; one resumed ring trial took longer because the agent failed to grasp the first ring five times before the rest went quickly.</p>
+  </div>
+</section>
+
+<!-- ============ LIMITATIONS ============ -->
+<section class="sec" id="limitations">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Failure modes</div><h2>Why 15 trials did not count as successes</h2></div>
+      <p class="lede">Success means the task was completed with no operator intervention. Of the 15 other trials, 4 completed the task after a small intervention (an object set upright or back on the table), 2 stopped at the time cap (both also after a small intervention), 7 ended in a protective stop triggered by the arm, 1 in an emergency stop by the operator, and 1 finished with the task not done. Three causes, sometimes combined. Trial ids open the trial in the list below.</p>
+    </div>
+    <div class="modes">
+      <article class="mode">
+        <div class="k">1 · Perception</div>
+        <h3>A wrong reading of the scene</h3>
+        <p>The agent named the rectangular opening the square one and kept pushing with increasing force until a protective stop. It read a standing prism as lying on its side and approached from the wrong angle. From an oblique view it measured the pink ring larger than the white one and built the tower in the wrong order. A white-ring detector returned the yellow ring and the arm pressed the rod into the table.</p>
+        <div class="trials" data-trials="2b-t4,2c-t1,2c-t3,3b-t1,3b-t2"></div>
+        <div class="fix"><b>Likely remedy</b>The authors attribute these to classical computer vision on a single wrist camera and expect learned perception to address them. Untested.</div>
+      </article>
+      <article class="mode">
+        <div class="k">2 · Anchoring</div>
+        <h3>Re-measuring instead of re-questioning</h3>
+        <p>In four runs a faulty assumption was never revisited. One trial measured the hole clearance nine different ways but never asked whether it had the right hole. Another swept the wrist angle or the position for forty minutes but never both together. One re-measured from a pose it had already recognized as unusable. One took the square hole for the rectangular one for most of an hour, until a protective stop.</p>
+        <div class="trials" data-trials="2b-t4,2c-t2,1b-t5,2d-t4"></div>
+        <div class="fix"><b>Likely remedy</b>We think this is mostly intrinsic to the model. It is what turns a wrong label into an hour-long trial.</div>
+      </article>
+      <article class="mode">
+        <div class="k">3 · No body schema</div>
+        <h3>Unaware of its own morphology</h3>
+        <p>The platform checks only the tool centre point. Rotating the tool ninety degrees in mid-air kept that point inside the box while the gripper body swept toward the arm in one case and into the table in another. The agent descended onto a cup with the jaws closed instead of open, onto the sorter with the jaws open, and once landed a fingertip on the cup it had placed a moment earlier.</p>
+        <div class="trials" data-trials="2c-t1,2c-t3,1e-t5,2d-t4,2c-t4,1f-t5"></div>
+        <div class="fix"><b>Likely remedy</b>A simulation that includes the robot's own morphology, or a scene camera so the agent can see itself.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAL EXPLORER ============ -->
+<section class="sec" id="trials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Dig deeper</div><h2>All 45 trials</h2></div>
+      <p class="lede">Per trial: the wrist-camera frames the agent captured, what happened, and the run's numbers. Resumed second passes are shown underneath. Transcripts are the condensed agent log, one line per model turn.</p>
+    </div>
+    <div class="explorer">
+      <nav class="task-list" id="task-list" aria-label="Tasks"></nav>
+      <div id="explorer-body"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SESSION ============ -->
+<section class="sec" id="session">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Dig deeper</div><h2>Anatomy of one session</h2></div>
+      <p class="lede">Trial 2 of <i>Yellow and Green Cups</i>: 3.8 minutes, 13 turns, 16 tool calls, no direct motion tool calls. Two turns of reading, two of measuring, one 111-line script for the whole manipulation, seven short verification turns.</p>
+    </div>
+    <div class="session">
+      <div class="timeline">
+        <div class="hd"><span>run-20260905T120810-1d-t2</span><span>prompt: <b>Stack the yellow cup on top of the green cup.</b></span></div>
+        <div class="tl-row"><span class="t">00:02</span><span class="tool">read ×4 · look</span><span class="w">reads both skills and two manual pages; takes a frame from the start pose</span></div>
+        <div class="tl-row"><span class="t">00:26</span><span class="tool bash">bash</span><span class="w">"I can see both cups." Writes an OpenCV script that prints the median HSV of the green and yellow cups on the live frame <i>(16 s generation)</i></span></div>
+        <div class="tl-row"><span class="t">00:35</span><span class="tool">locate_objects ×2</span><span class="w">green H 60–100 and yellow H 15–40; each returns centre in base frame, top height, depth-sample counts</span></div>
+        <div class="tl-row"><span class="t">01:53</span><span class="tool big">bash · 111 lines</span><span class="w">"Both cups located with good depth evidence." One guarded script: parallax-corrects the target, checks reachability, touches the cargo's top, grasps with the pad-band formula at two wrist angles, lifts and checks for slip, transits, descends to contact on the green cup, seats 2 mm, releases. <i>(78 s generation, ~85 s of robot motion)</i></span></div>
+        <div class="tl-row"><span class="t">03:19</span><span class="tool">look · bash ×3</span><span class="w">"The script completed. Let me verify." Top-down frame, then the taught side-view pose, then a cropped and upscaled view of the stack</span></div>
+        <div class="tl-row"><span class="t">03:41</span><span class="tool bash">bash</span><span class="w">"The stack is verified… two concentric tiers." Returns the arm to the start pose</span></div>
+        <div class="tl-row"><span class="t">03:46</span><span class="tool">done</span><span class="w">"The yellow cup is stacked on top of the green cup — verified concentric from the profile view."</span></div>
+      </div>
+      <div>
+        <div class="codebox">
+          <div class="hd"><span>stack_run.py · grasp step, 22 of 111 lines, agent-written, verbatim</span><span>turn 5</span></div>
+<pre><code><span class="c"># === STEP 2: GRASP YELLOW CUP (pad-band formula) ===</span>
+surface_z = table_z
+grasp_z = (surface_z + yellow_top) / <span class="n">2</span> - <span class="n">0.010</span>
+hang = grasp_z - table_z
+<span class="f">print</span>(<span class="s">f"surface_z={surface_z:.4f}, top={yellow_top:.4f}, grasp_z={grasp_z:.4f}, hang={hang*1000:.1f}mm"</span>)
+
+bot.<span class="f">gripper</span>(width=<span class="n">0.085</span>, force=<span class="n">25</span>, speed=<span class="n">0.05</span>)
+bot.<span class="f">move_tcp</span>(yx, yy, <span class="n">0.12</span>, top_down_deg=theta)
+bot.<span class="f">move_tcp</span>(yx, yy, grasp_z, top_down_deg=theta)
+g1 = bot.<span class="f">gripper</span>(width=<span class="n">0</span>, force=<span class="n">25</span>, speed=<span class="n">0.02</span>)
+stall1 = g1[<span class="s">"width_m"</span>]
+<span class="f">print</span>(<span class="s">f"Close 1 stall: {stall1:.4f}"</span>)
+<span class="k">assert</span> stall1 &lt; <span class="n">0.080</span>, <span class="s">f"Close 1 didn't stall (no cup?): {stall1}"</span>
+
+<span class="c"># ... re-open, rotate the wrist 90 deg, close again (stall2) ...</span>
+
+<span class="c"># Lift and verify</span>
+bot.<span class="f">move_tcp</span>(yx, yy, <span class="n">0.14</span>, top_down_deg=theta - <span class="n">90</span>)
+w_after = bot.<span class="f">state</span>()[<span class="s">"gripper_width_m"</span>]
+<span class="f">print</span>(<span class="s">f"Width after lift: {w_after:.4f}"</span>)
+<span class="k">assert</span> <span class="f">abs</span>(w_after - stall2) &lt; <span class="n">0.005</span>, <span class="s">f"Slip! {stall2} -> {w_after}"</span>
+<span class="f">print</span>(<span class="s">"Grasp verified - held."</span>)</code></pre>
+        </div>
+        <p class="small muted" style="margin-top:.9rem">The pieces in these lines: the manual's pad-band formula <code>(surface_z + top)/2 − 0.010</code>, the <code>yellow_top</code> this run touched, the SDK's <code>gripper()</code> and <code>state()</code>, and the skill's verification discipline, stall width first and width after lift second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Dig deeper</div><h2>The six skills</h2></div>
+      <p class="lede">A skill holds a procedure step by step, the measured values that justify each step and how they were obtained, the verification, and the pitfalls met during authoring. Values are marked valid for the measured instance only; the procedure is what is meant to transfer. Only the name and one-line description sit in the prompt. Shown verbatim as the agent read them.</p>
+    </div>
+    <div class="skill-grid" id="skill-grid"></div>
+    <div class="tabs" id="skill-tabs"></div>
+    <div class="doc-meta">
+      <span class="muted small" id="skill-meta"></span>
+      <span class="small"><button class="linkish" id="show-prompt">Show the 68-line system prompt instead</button></span>
+    </div>
+    <div class="doc" id="skill-doc"></div>
+  </div>
+</section>
+
+<!-- ============ PAPER ============ -->
+<section class="sec" id="paper">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Paper</div><h2>Paper and supplementary material</h2></div>
+      <p class="lede">The supplementary material holds additional experimental data, agent session logs, scene-camera recordings, the system prompt and the skill documents. The platform and agent code are not released.</p>
+    </div>
+    <div class="paper-grid">
+      <a href="assets/paper.pdf"><img src="assets/paper-page1.webp" alt="First page of the paper" width="935" height="1210"></a>
+      <div>
+        <div class="hero-actions" style="margin:0 0 1.4rem">
+          <a class="btn primary" href="assets/paper.pdf">Download PDF</a>
+          <a class="btn" href="https://mega.nz/folder/g3ol2bbQ#FSywvRtXJ4Ooc8WcqLF1mg" target="_blank" rel="noopener">Supplementary material (MEGA)</a>
+          <a class="btn" href="https://github.com/airo-ugent/airo-mono" target="_blank" rel="noopener">airo-mono (the lab's hardware layer)</a>
+        </div>
+        <div class="bib" id="bibtex"><button id="copy-bib" type="button">Copy</button>@inproceedings{talwar2027generalizing,
+  title     = {Generalizing Manipulation Skills with a Local Coding Agent},
+  author    = {Talwar, Raman and Nijs, Elias and Verleysen, Andreas and wyffels, Francis},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2027},
+  note      = {Under review. Raman Talwar and Elias Nijs contributed equally.}
+}</div>
+        <h4 style="margin-top:1.6rem">Related work this builds on</h4>
+        <ul class="refs" id="refs"></ul>
+        <p class="small muted" style="margin-top:1.4rem"><b>AI disclosure.</b> Parts of the manuscript text were drafted and revised with Claude Code (Fable 5.1, Opus 5.1). It was also used in drafting the skills for the framework and editing code. All AI usage happened under the authors' direction; the authors checked every stated number and claim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div id="logos" style="display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap"></div>
+    <div><a href="https://airo.ugent.be">IDLab-AIRO</a> · Ghent University – imec · Technologiepark-Zwijnaarde, Belgium<br><span class="small">Robot: UR3e, Robotiq 2F-85, Intel RealSense D435. Model: Qwen3.8-27B via vLLM on one RTX PRO 6000.</span></div>
+  </div>
+</footer>
+
+<div class="tip" id="tip" aria-hidden="true"></div>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="bg" id="drawer-bg"></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div class="ph"><div id="drawer-title"></div><button class="close" id="drawer-close" aria-label="Close">×</button></div>
+    <div class="body" id="drawer-body"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="data/site-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1112 @@
+{
+ "generated": "2026-09-20",
+ "total_bytes": 16969434,
+ "file_count": 82,
+ "task_codes": {
+  "1b": "cup-stacking-red-cups",
+  "1c": "cup-stacking-blue-cups",
+  "1d": "cup-stacking-yellow-on-green",
+  "1e": "cup-stacking-three-cup-tower",
+  "1f": "cup-stacking-four-in-a-line",
+  "2b": "shape-sorter-blue-cube",
+  "2c": "shape-sorter-green-triangle",
+  "2d": "shape-sorter-yellow-rectangle",
+  "3b": "ring-tower-five-rings"
+ },
+ "video_chapters": [
+  {
+   "t": 0,
+   "label": "Motivation: can a local model generalize a robot skill?"
+  },
+  {
+   "t": 20,
+   "label": "Setup: the agent reads a skill written for one object"
+  },
+  {
+   "t": 31,
+   "label": "Case study: yellow cup on green cup with blue-cup skills only"
+  },
+  {
+   "t": 59,
+   "label": "Nine task variations: color, size, shape, composition"
+  },
+  {
+   "t": 89,
+   "label": "Shape sorter: new shapes with red-cylinder skills"
+  },
+  {
+   "t": 97,
+   "label": "Ring tower: rebuild in order"
+  },
+  {
+   "t": 107,
+   "label": "Three limitations"
+  },
+  {
+   "t": 137,
+   "label": "Second pass: scene rearranged, session resumed"
+  },
+  {
+   "t": 155,
+   "label": "Results grid: nine tasks x five trials"
+  },
+  {
+   "t": 169,
+   "label": "Summary: 30 of 45 trials"
+  }
+ ],
+ "strips_total_frames": 417,
+ "files": [
+  {
+   "path": "cell-thumb.webp",
+   "bytes": 26370,
+   "width": 480,
+   "height": 309
+  },
+  {
+   "path": "cell.webp",
+   "bytes": 178738,
+   "width": 1800,
+   "height": 1160
+  },
+  {
+   "path": "paper-page1.webp",
+   "bytes": 207758,
+   "width": 935,
+   "height": 1210
+  },
+  {
+   "path": "paper.pdf",
+   "bytes": 644156
+  },
+  {
+   "path": "pictureofcell-thumb.webp",
+   "bytes": 39926,
+   "width": 480,
+   "height": 480
+  },
+  {
+   "path": "pictureofcell.webp",
+   "bytes": 266052,
+   "width": 1800,
+   "height": 1800
+  },
+  {
+   "path": "strips/run-20260905T113003-1c-t2.webp",
+   "bytes": 13914,
+   "width": 1533,
+   "height": 240,
+   "run_dir": "run-20260905T113003-1c-t2",
+   "task_code": "1c",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_092435_look.png",
+    "002_092829_look.png",
+    "003_092902_read.png",
+    "004_092902_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T113511-1c-t3.webp",
+   "bytes": 7798,
+   "width": 858,
+   "height": 240,
+   "run_dir": "run-20260905T113511-1c-t3",
+   "task_code": "1c",
+   "frames_used": 2,
+   "frames_total": 2,
+   "frames": [
+    "001_093103_look.png",
+    "002_093424_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T114326-1c-t4.webp",
+   "bytes": 13522,
+   "width": 1533,
+   "height": 240,
+   "run_dir": "run-20260905T114326-1c-t4",
+   "task_code": "1c",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_093625_look.png",
+    "002_094139_look.png",
+    "003_094213_look.png",
+    "004_094224_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T115157-1c-t5.webp",
+   "bytes": 19168,
+   "width": 2002,
+   "height": 240,
+   "run_dir": "run-20260905T115157-1c-t5",
+   "task_code": "1c",
+   "frames_used": 5,
+   "frames_total": 5,
+   "frames": [
+    "001_094421_look.png",
+    "002_094734_read.png",
+    "003_095009_read.png",
+    "004_095028_look.png",
+    "005_095034_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T120303-1d-t1.webp",
+   "bytes": 20932,
+   "width": 2395,
+   "height": 240,
+   "run_dir": "run-20260905T120303-1d-t1",
+   "task_code": "1d",
+   "frames_used": 6,
+   "frames_total": 6,
+   "frames": [
+    "001_095334_look.png",
+    "002_095437_read.png",
+    "003_095930_look.png",
+    "004_100131_look.png",
+    "005_100145_read.png",
+    "006_100159_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T120810-1d-t2.webp",
+   "bytes": 13302,
+   "width": 1533,
+   "height": 240,
+   "run_dir": "run-20260905T120810-1d-t2",
+   "task_code": "1d",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_100351_look.png",
+    "002_100711_look.png",
+    "003_100721_look.png",
+    "004_100727_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T121827-1d-t3.webp",
+   "bytes": 17218,
+   "width": 1964,
+   "height": 240,
+   "run_dir": "run-20260905T121827-1d-t3",
+   "task_code": "1d",
+   "frames_used": 5,
+   "frames_total": 5,
+   "frames": [
+    "001_101036_look.png",
+    "002_101511_look.png",
+    "003_101700_read.png",
+    "004_101713_look.png",
+    "005_101729_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T123100-1d-t4.webp",
+   "bytes": 9300,
+   "width": 1102,
+   "height": 240,
+   "run_dir": "run-20260905T123100-1d-t4",
+   "task_code": "1d",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_102333_look.png",
+    "002_102950_look.png",
+    "003_102958_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T124215-1d-t5.webp",
+   "bytes": 15066,
+   "width": 1533,
+   "height": 240,
+   "run_dir": "run-20260905T124215-1d-t5",
+   "task_code": "1d",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_103204_look.png",
+    "002_103445_read.png",
+    "003_104046_look.png",
+    "004_104059_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T125714-1e-t1.webp",
+   "bytes": 16548,
+   "width": 1701,
+   "height": 240,
+   "run_dir": "run-20260905T125714-1e-t1",
+   "task_code": "1e",
+   "frames_used": 5,
+   "frames_total": 5,
+   "frames": [
+    "001_104742_look.png",
+    "002_105255_look.png",
+    "003_105448_look.png",
+    "004_105458_read.png",
+    "005_105504_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T131716-1e-t2.webp",
+   "bytes": 21758,
+   "width": 2490,
+   "height": 240,
+   "run_dir": "run-20260905T131716-1e-t2",
+   "task_code": "1e",
+   "frames_used": 7,
+   "frames_total": 7,
+   "frames": [
+    "001_110054_look.png",
+    "002_110739_look.png",
+    "003_111002_look.png",
+    "004_111212_read.png",
+    "005_111212_read.png",
+    "006_111452_look.png",
+    "007_111459_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T133721-1e-t3.webp",
+   "bytes": 25662,
+   "width": 2639,
+   "height": 240,
+   "run_dir": "run-20260905T133721-1e-t3",
+   "task_code": "1e",
+   "frames_used": 7,
+   "frames_total": 7,
+   "frames": [
+    "001_112224_look.png",
+    "002_112958_look.png",
+    "003_113012_look.png",
+    "004_113022_read.png",
+    "005_113542_look.png",
+    "006_113551_look.png",
+    "007_113558_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T135020-1e-t4.webp",
+   "bytes": 23718,
+   "width": 2395,
+   "height": 240,
+   "run_dir": "run-20260905T135020-1e-t4",
+   "task_code": "1e",
+   "frames_used": 6,
+   "frames_total": 6,
+   "frames": [
+    "001_113834_look.png",
+    "002_114128_read.png",
+    "003_114630_read.png",
+    "004_114649_read.png",
+    "005_114922_read.png",
+    "006_114929_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T140430-1e-t5-protective-stop.webp",
+   "bytes": 4226,
+   "width": 427,
+   "height": 240,
+   "run_dir": "run-20260905T140430-1e-t5-protective-stop",
+   "task_code": "1e",
+   "frames_used": 1,
+   "frames_total": 1,
+   "frames": [
+    "001_115104_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T144933-1f-t1.webp",
+   "bytes": 20806,
+   "width": 1720,
+   "height": 240,
+   "run_dir": "run-20260905T144933-1f-t1",
+   "task_code": "1f",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_123403_look.png",
+    "002_123526_read.png",
+    "003_124205_read.png",
+    "004_124648_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T150328-1f-t2.webp",
+   "bytes": 13180,
+   "width": 1289,
+   "height": 240,
+   "run_dir": "run-20260905T150328-1f-t2",
+   "task_code": "1f",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_125035_look.png",
+    "002_125843_look.png",
+    "003_130207_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T152103-1f-t3.webp",
+   "bytes": 16426,
+   "width": 1720,
+   "height": 240,
+   "run_dir": "run-20260905T152103-1f-t3",
+   "task_code": "1f",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_130427_look.png",
+    "002_131351_look.png",
+    "003_131623_look.png",
+    "004_131926_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T153709-1f-t4.webp",
+   "bytes": 16938,
+   "width": 1720,
+   "height": 240,
+   "run_dir": "run-20260905T153709-1f-t4",
+   "task_code": "1f",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_132155_look.png",
+    "002_132752_look.png",
+    "003_133154_look.png",
+    "004_133517_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T162434-1f-t5.webp",
+   "bytes": 13384,
+   "width": 1289,
+   "height": 240,
+   "run_dir": "run-20260905T162434-1f-t5",
+   "task_code": "1f",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_140052_look.png",
+    "002_140659_look.png",
+    "003_140731_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260905T170133-2b-t1.webp",
+   "bytes": 21600,
+   "width": 3169,
+   "height": 240,
+   "run_dir": "run-20260905T170133-2b-t1",
+   "task_code": "2b",
+   "frames_used": 8,
+   "frames_total": 16,
+   "frames": [
+    "001_142754_look.png",
+    "003_142924_read.png",
+    "005_143034_read.png",
+    "007_143434_look.png",
+    "010_145823_read.png",
+    "012_145855_read.png",
+    "014_145929_read.png",
+    "016_145958_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T093750-2b-t2.webp",
+   "bytes": 39324,
+   "width": 3470,
+   "height": 240,
+   "run_dir": "run-20260907T093750-2b-t2",
+   "task_code": "2b",
+   "frames_used": 8,
+   "frames_total": 17,
+   "frames": [
+    "001_071206_look.png",
+    "003_071618_look.png",
+    "006_071917_read.png",
+    "008_072631_look.png",
+    "010_073038_read.png",
+    "012_073500_read.png",
+    "015_073600_read.png",
+    "017_073647_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T102455-2b-t3.webp",
+   "bytes": 39672,
+   "width": 3287,
+   "height": 240,
+   "run_dir": "run-20260907T102455-2b-t3",
+   "task_code": "2b",
+   "frames_used": 8,
+   "frames_total": 21,
+   "frames": [
+    "001_074045_look.png",
+    "004_074407_look.png",
+    "007_074745_look.png",
+    "010_075156_read.png",
+    "012_075339_read.png",
+    "015_080436_read.png",
+    "018_082014_look.png",
+    "021_082124_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T113048-2b-t4.webp",
+   "bytes": 38114,
+   "width": 3066,
+   "height": 240,
+   "run_dir": "run-20260907T113048-2b-t4",
+   "task_code": "2b",
+   "frames_used": 8,
+   "frames_total": 29,
+   "frames": [
+    "001_082620_look.png",
+    "005_082922_read.png",
+    "009_083233_read.png",
+    "013_083847_read.png",
+    "017_084236_look.png",
+    "021_085401_read.png",
+    "025_091347_look.png",
+    "029_092706_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T115252-2b-t5.webp",
+   "bytes": 33860,
+   "width": 3013,
+   "height": 240,
+   "run_dir": "run-20260907T115252-2b-t5",
+   "task_code": "2b",
+   "frames_used": 7,
+   "frames_total": 7,
+   "frames": [
+    "001_093846_look.png",
+    "002_094112_look.png",
+    "003_094416_look.png",
+    "004_094804_look.png",
+    "005_094920_look.png",
+    "006_095036_look.png",
+    "007_095104_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T121219-2c-t1.webp",
+   "bytes": 34558,
+   "width": 2535,
+   "height": 240,
+   "run_dir": "run-20260907T121219-2c-t1",
+   "task_code": "2c",
+   "frames_used": 6,
+   "frames_total": 6,
+   "frames": [
+    "001_095454_look.png",
+    "002_095719_look.png",
+    "003_095942_look.png",
+    "004_100120_read.png",
+    "005_100226_read.png",
+    "006_100641_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T133309-2c-t2.webp",
+   "bytes": 32880,
+   "width": 3130,
+   "height": 240,
+   "run_dir": "run-20260907T133309-2c-t2",
+   "task_code": "2c",
+   "frames_used": 8,
+   "frames_total": 21,
+   "frames": [
+    "001_102124_look.png",
+    "004_102336_read.png",
+    "007_103218_look.png",
+    "010_103742_look.png",
+    "012_104621_look.png",
+    "015_110517_read.png",
+    "018_111556_look.png",
+    "021_112833_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T151309-2d-t1.webp",
+   "bytes": 35086,
+   "width": 3347,
+   "height": 240,
+   "run_dir": "run-20260907T151309-2d-t1",
+   "task_code": "2d",
+   "frames_used": 8,
+   "frames_total": 14,
+   "frames": [
+    "001_120517_look.png",
+    "003_122557_read.png",
+    "005_125253_look.png",
+    "007_125621_look.png",
+    "008_125749_read.png",
+    "010_130225_read.png",
+    "012_131143_look.png",
+    "014_131206_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T160022-2d-t2.webp",
+   "bytes": 33388,
+   "width": 3670,
+   "height": 240,
+   "run_dir": "run-20260907T160022-2d-t2",
+   "task_code": "2d",
+   "frames_used": 8,
+   "frames_total": 19,
+   "frames": [
+    "001_131817_look.png",
+    "004_132018_read.png",
+    "006_132726_look.png",
+    "009_133655_read.png",
+    "011_133930_read.png",
+    "014_135215_look.png",
+    "016_135750_look.png",
+    "019_135910_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T164826-2d-t3.webp",
+   "bytes": 38274,
+   "width": 3337,
+   "height": 240,
+   "run_dir": "run-20260907T164826-2d-t3",
+   "task_code": "2d",
+   "frames_used": 8,
+   "frames_total": 24,
+   "frames": [
+    "001_140352_look.png",
+    "004_140750_read.png",
+    "008_141912_read.png",
+    "011_142216_read.png",
+    "014_142602_read.png",
+    "017_143718_read.png",
+    "021_144635_read.png",
+    "024_144713_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T173634-2d-t4.webp",
+   "bytes": 33918,
+   "width": 3050,
+   "height": 240,
+   "run_dir": "run-20260907T173634-2d-t4",
+   "task_code": "2d",
+   "frames_used": 8,
+   "frames_total": 16,
+   "frames": [
+    "001_145007_look.png",
+    "003_145135_read.png",
+    "005_145948_look.png",
+    "007_150734_look.png",
+    "010_151531_read.png",
+    "012_152025_read.png",
+    "014_152140_read.png",
+    "016_153045_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T182245-2d-t5.webp",
+   "bytes": 36748,
+   "width": 3345,
+   "height": 240,
+   "run_dir": "run-20260907T182245-2d-t5",
+   "task_code": "2d",
+   "frames_used": 8,
+   "frames_total": 11,
+   "frames": [
+    "001_154343_look.png",
+    "002_154822_read.png",
+    "004_155757_read.png",
+    "005_160338_read.png",
+    "007_160834_read.png",
+    "008_161703_look.png",
+    "010_161921_read.png",
+    "011_162054_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260907T194519-3b-t1.webp",
+   "bytes": 36308,
+   "width": 3444,
+   "height": 240,
+   "run_dir": "run-20260907T194519-3b-t1",
+   "task_code": "3b",
+   "frames_used": 8,
+   "frames_total": 16,
+   "frames": [
+    "001_164516_look.png",
+    "003_165239_look.png",
+    "005_170826_read.png",
+    "007_173130_read.png",
+    "010_173608_read.png",
+    "012_173959_read.png",
+    "014_174147_read.png",
+    "016_174326_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T093522-3b-t2.webp",
+   "bytes": 31850,
+   "width": 3013,
+   "height": 240,
+   "run_dir": "run-20260908T093522-3b-t2",
+   "task_code": "3b",
+   "frames_used": 7,
+   "frames_total": 7,
+   "frames": [
+    "001_071514_look.png",
+    "002_072207_look.png",
+    "003_072549_look.png",
+    "004_072730_look.png",
+    "005_072835_look.png",
+    "006_073043_look.png",
+    "007_073259_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T100519-3b-t3.webp",
+   "bytes": 39400,
+   "width": 3444,
+   "height": 240,
+   "run_dir": "run-20260908T100519-3b-t3",
+   "task_code": "3b",
+   "frames_used": 8,
+   "frames_total": 9,
+   "frames": [
+    "001_074140_look.png",
+    "002_074433_read.png",
+    "003_074734_read.png",
+    "004_075520_read.png",
+    "006_075920_read.png",
+    "007_080217_read.png",
+    "008_080335_read.png",
+    "009_080402_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T104218-3b-t4.webp",
+   "bytes": 36640,
+   "width": 3444,
+   "height": 240,
+   "run_dir": "run-20260908T104218-3b-t4",
+   "task_code": "3b",
+   "frames_used": 8,
+   "frames_total": 14,
+   "frames": [
+    "001_081527_look.png",
+    "003_082128_read.png",
+    "005_082307_read.png",
+    "007_083206_look.png",
+    "008_083359_read.png",
+    "010_083550_look.png",
+    "012_083845_look.png",
+    "014_084117_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T111723-3b-t5.webp",
+   "bytes": 40346,
+   "width": 3444,
+   "height": 240,
+   "run_dir": "run-20260908T111723-3b-t5",
+   "task_code": "3b",
+   "frames_used": 8,
+   "frames_total": 14,
+   "frames": [
+    "001_084334_look.png",
+    "003_084655_read.png",
+    "005_085113_read.png",
+    "007_085424_read.png",
+    "008_090345_look.png",
+    "010_090714_read.png",
+    "012_091248_read.png",
+    "014_091609_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T112944-1b-t1.webp",
+   "bytes": 9864,
+   "width": 1102,
+   "height": 240,
+   "run_dir": "run-20260908T112944-1b-t1",
+   "task_code": "1b",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_092435_look.png",
+    "002_092834_look.png",
+    "003_092850_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T113851-1b-t2.webp",
+   "bytes": 18956,
+   "width": 1954,
+   "height": 240,
+   "run_dir": "run-20260908T113851-1b-t2",
+   "task_code": "1b",
+   "frames_used": 5,
+   "frames_total": 5,
+   "frames": [
+    "001_093057_look.png",
+    "002_093509_look.png",
+    "003_093617_look.png",
+    "004_093702_look.png",
+    "005_093710_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T115946-1b-t3.webp",
+   "bytes": 9674,
+   "width": 1102,
+   "height": 240,
+   "run_dir": "run-20260908T115946-1b-t3",
+   "task_code": "1b",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_095516_look.png",
+    "002_095842_look.png",
+    "003_095849_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T120613-1b-t4.webp",
+   "bytes": 9686,
+   "width": 1102,
+   "height": 240,
+   "run_dir": "run-20260908T120613-1b-t4",
+   "task_code": "1b",
+   "frames_used": 3,
+   "frames_total": 3,
+   "frames": [
+    "001_100141_look.png",
+    "002_100521_look.png",
+    "003_100526_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T123108-1b-t5.webp",
+   "bytes": 27664,
+   "width": 2826,
+   "height": 240,
+   "run_dir": "run-20260908T123108-1b-t5",
+   "task_code": "1b",
+   "frames_used": 7,
+   "frames_total": 7,
+   "frames": [
+    "001_100659_look.png",
+    "002_101306_look.png",
+    "003_101532_look.png",
+    "004_101642_look.png",
+    "005_102348_look.png",
+    "006_102544_read.png",
+    "007_102727_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T125229-1c-t1.webp",
+   "bytes": 14556,
+   "width": 1533,
+   "height": 240,
+   "run_dir": "run-20260908T125229-1c-t1",
+   "task_code": "1c",
+   "frames_used": 4,
+   "frames_total": 4,
+   "frames": [
+    "001_104537_look.png",
+    "002_104905_look.png",
+    "003_105108_look.png",
+    "004_105116_read.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T130805-2c-t3.webp",
+   "bytes": 50212,
+   "width": 3444,
+   "height": 240,
+   "run_dir": "run-20260908T130805-2c-t3",
+   "task_code": "2c",
+   "frames_used": 8,
+   "frames_total": 8,
+   "frames": [
+    "001_105317_look.png",
+    "002_105355_look.png",
+    "003_105628_look.png",
+    "004_105711_look.png",
+    "005_105853_look.png",
+    "006_105924_look.png",
+    "007_110227_look.png",
+    "008_110424_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T140214-2c-t4.webp",
+   "bytes": 45182,
+   "width": 4041,
+   "height": 240,
+   "run_dir": "run-20260908T140214-2c-t4",
+   "task_code": "2c",
+   "frames_used": 8,
+   "frames_total": 13,
+   "frames": [
+    "001_111341_look.png",
+    "003_112013_look.png",
+    "004_112121_look.png",
+    "006_112455_look.png",
+    "008_112738_look.png",
+    "010_113033_read.png",
+    "011_113337_read.png",
+    "013_114216_look.png"
+   ]
+  },
+  {
+   "path": "strips/run-20260908T144602-2c-t5.webp",
+   "bytes": 44244,
+   "width": 3139,
+   "height": 240,
+   "run_dir": "run-20260908T144602-2c-t5",
+   "task_code": "2c",
+   "frames_used": 8,
+   "frames_total": 29,
+   "frames": [
+    "001_121324_look.png",
+    "005_121749_read.png",
+    "009_122711_look.png",
+    "013_123238_look.png",
+    "017_123500_read.png",
+    "021_124215_look.png",
+    "025_124329_look.png",
+    "029_124507_look.png"
+   ]
+  },
+  {
+   "path": "tasks/1b-hero.webp",
+   "bytes": 10516,
+   "width": 640,
+   "height": 360,
+   "task_code": "1b",
+   "task": "cup-stacking-red-cups",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260908T115946-1b-t3/002_095842_look.png"
+  },
+  {
+   "path": "tasks/1c-hero.webp",
+   "bytes": 10118,
+   "width": 640,
+   "height": 360,
+   "task_code": "1c",
+   "task": "cup-stacking-blue-cups",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260905T114326-1c-t4/003_094213_look.png"
+  },
+  {
+   "path": "tasks/1d-hero.webp",
+   "bytes": 9904,
+   "width": 640,
+   "height": 360,
+   "task_code": "1d",
+   "task": "cup-stacking-yellow-on-green",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260905T120810-1d-t2/003_100721_look.png"
+  },
+  {
+   "path": "tasks/1e-hero.webp",
+   "bytes": 10016,
+   "width": 640,
+   "height": 360,
+   "task_code": "1e",
+   "task": "cup-stacking-three-cup-tower",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260905T133721-1e-t3/006_113551_look.png"
+  },
+  {
+   "path": "tasks/1f-hero.webp",
+   "bytes": 11948,
+   "width": 640,
+   "height": 360,
+   "task_code": "1f",
+   "task": "cup-stacking-four-in-a-line",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260905T153709-1f-t4/004_133517_look.png"
+  },
+  {
+   "path": "tasks/2b-hero.webp",
+   "bytes": 14216,
+   "width": 640,
+   "height": 360,
+   "task_code": "2b",
+   "task": "shape-sorter-blue-cube",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260907T102455-2b-t3/021_082124_look.png"
+  },
+  {
+   "path": "tasks/2c-hero.webp",
+   "bytes": 15718,
+   "width": 640,
+   "height": 360,
+   "task_code": "2c",
+   "task": "shape-sorter-green-triangle",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260908T144602-2c-t5/025_124329_look.png"
+  },
+  {
+   "path": "tasks/2d-hero.webp",
+   "bytes": 13852,
+   "width": 640,
+   "height": 360,
+   "task_code": "2d",
+   "task": "shape-sorter-yellow-rectangle",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260907T160022-2d-t2/018_135901_look.png"
+  },
+  {
+   "path": "tasks/3b-hero.webp",
+   "bytes": 10730,
+   "width": 640,
+   "height": 360,
+   "task_code": "3b",
+   "task": "ring-tower-five-rings",
+   "source_frame": "airo-archive/_decrypted/_frames/run-20260908T104218-3b-t4/014_084117_look.png"
+  },
+  {
+   "path": "video/contact-sheet.jpg",
+   "bytes": 426928,
+   "width": 1920,
+   "height": 1080
+  },
+  {
+   "path": "video/hero-loop.mp4",
+   "bytes": 867566,
+   "width": 960,
+   "height": 540,
+   "duration_s": 13.0
+  },
+  {
+   "path": "video/paper-video-poster.jpg",
+   "bytes": 54585,
+   "width": 960,
+   "height": 540
+  },
+  {
+   "path": "video/paper-video.mp4",
+   "bytes": 11466773,
+   "width": 960,
+   "height": 540,
+   "duration_s": 179.52
+  },
+  {
+   "path": "results/cup-stacking-blue-cups.webp",
+   "bytes": 174772,
+   "width": 1600,
+   "height": 1542
+  },
+  {
+   "path": "results/cup-stacking-four-in-a-line.webp",
+   "bytes": 151836,
+   "width": 1600,
+   "height": 1332
+  },
+  {
+   "path": "results/cup-stacking-red-cups.webp",
+   "bytes": 153100,
+   "width": 1600,
+   "height": 1332
+  },
+  {
+   "path": "results/cup-stacking-three-cup-tower.webp",
+   "bytes": 147576,
+   "width": 1600,
+   "height": 1332
+  },
+  {
+   "path": "results/cup-stacking-yellow-on-green.webp",
+   "bytes": 166050,
+   "width": 1600,
+   "height": 1542
+  },
+  {
+   "path": "results/ring-tower-five-rings.webp",
+   "bytes": 160280,
+   "width": 1600,
+   "height": 1332
+  },
+  {
+   "path": "results/shape-sorter-blue-cube.webp",
+   "bytes": 163368,
+   "width": 1600,
+   "height": 1332
+  },
+  {
+   "path": "results/shape-sorter-green-triangle.webp",
+   "bytes": 60062,
+   "width": 1600,
+   "height": 488
+  },
+  {
+   "path": "results/shape-sorter-yellow-rectangle.webp",
+   "bytes": 143872,
+   "width": 1600,
+   "height": 1121
+  },
+  {
+   "path": "results/thumbs/cup-stacking-blue-cups.webp",
+   "bytes": 29912,
+   "width": 480,
+   "height": 463
+  },
+  {
+   "path": "results/thumbs/cup-stacking-four-in-a-line.webp",
+   "bytes": 25372,
+   "width": 480,
+   "height": 399
+  },
+  {
+   "path": "results/thumbs/cup-stacking-red-cups.webp",
+   "bytes": 25764,
+   "width": 480,
+   "height": 399
+  },
+  {
+   "path": "results/thumbs/cup-stacking-three-cup-tower.webp",
+   "bytes": 25156,
+   "width": 480,
+   "height": 399
+  },
+  {
+   "path": "results/thumbs/cup-stacking-yellow-on-green.webp",
+   "bytes": 27578,
+   "width": 480,
+   "height": 463
+  },
+  {
+   "path": "results/thumbs/ring-tower-five-rings.webp",
+   "bytes": 28864,
+   "width": 480,
+   "height": 399
+  },
+  {
+   "path": "results/thumbs/shape-sorter-blue-cube.webp",
+   "bytes": 29416,
+   "width": 480,
+   "height": 399
+  },
+  {
+   "path": "results/thumbs/shape-sorter-green-triangle.webp",
+   "bytes": 10764,
+   "width": 480,
+   "height": 147
+  },
+  {
+   "path": "results/thumbs/shape-sorter-yellow-rectangle.webp",
+   "bytes": 24952,
+   "width": 480,
+   "height": 336
+  }
+ ]
+}
