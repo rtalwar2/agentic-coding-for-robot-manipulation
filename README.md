@@ -9,13 +9,13 @@ Static site (no build step at serve time). Everything in this folder is what Git
 3. Settings → Pages → Source: "Deploy from a branch", pick the branch/folder.
 4. Keep `.nojekyll` (already present) so folders and files starting with `_` are served.
 
-Nothing here exceeds GitHub's 100 MB per-file limit; the whole folder is about 6 MB; the submission video is embedded from YouTube.
+Nothing here exceeds GitHub's 100 MB per-file limit; the whole folder is about 6 MB; the overview video is embedded from YouTube.
 
 ## Before publishing, review
 
 - `index.html` hero: authors link to airo.ugent.be. Replace with personal pages if wanted.
-- `assets/paper.pdf` is the *anonymised* submission PDF ("Anonymous authors"). Swap in the camera-ready when available.
-- Eyebrow text says "Submitted to ICRA 2027". Update on acceptance. BibTeX block in the Paper section likewise.
+- `assets/paper.pdf` is the de-anonymised PDF (named authors, IDLab-AIRO affiliation), copied from `~/writing/officedog/main.pdf`. Re-copy after rebuilding the LaTeX source.
+- The page deliberately names no venue or review status: eyebrow reads "Preprint" and the BibTeX is an `@misc` entry. Update both on acceptance.
 - The MEGA supplementary link is the one from the paper footnote.
 - Logos and palette come from the lab's zip and colour sheet, kept outside the site in `../website-sources/brand/`; see `assets/logos/SOURCES.md`.
 - The site publishes verbatim: the system prompt, the six skills, and condensed per-trial transcripts (these are declared public supplementary material in the paper). The platform/agent code is **not** included.
