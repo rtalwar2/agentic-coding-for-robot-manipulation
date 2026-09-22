@@ -123,7 +123,7 @@ HSV, body     H 104-107 S 222-255</div>
 <section class="sec" id="takeaways">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="eyebrow">For roboticists</div><h2>What this study says</h2></div>
+      <div><div class="eyebrow">For roboticists</div><h2>What we found</h2></div>
       <p class="lede">A 27B open-weight model on one workstation, given a coding harness, nine motion and perception primitives and a hand-written procedure for one object, generalized that procedure to new colours, sizes, shapes and task compositions on real hardware in 30 of 45 trials.</p>
     </div>
     <ol class="takeaways">
@@ -141,7 +141,7 @@ HSV, body     H 104-107 S 222-255</div>
       </li>
       <li>
         <h3>A second pass on a solved task halves the cost, so let the agent learn the task before relying on it</h3>
-        <p>Resuming the session on a rearranged scene cut tool calls in half and output tokens to a third, and fast trials stayed fast. This is in-session reuse rather than persistent learning; the paper's next steps are adding sensing to fix perception and body awareness, and a learning phase that consolidates experience into skills.</p>
+        <p>Resuming the session on a rearranged scene cut tool calls in half and output tokens to a third, and fast trials stayed fast. This is in-session reuse rather than persistent learning; our next steps are adding sensing to fix perception and body awareness, and a learning phase that consolidates experience into skills.</p>
       </li>
     </ol>
   </div>
@@ -263,10 +263,10 @@ HSV, body     H 104-107 S 222-255</div>
     <div class="table-wrap">
       <table class="grid-table" id="grid-table"></table>
     </div>
-    <p class="muted small" style="margin-top:.8rem;max-width:var(--measure)">Table as printed in the paper. <i>Success</i> counts only trials that finished without any operator intervention. Four further trials completed the task after a small intervention (an object set upright or back on the table). <i>Reas.</i> is the median share of output tokens spent on reasoning. The chart plots every individual trial, including stopped ones; the table's durations follow the paper.</p>
+    <p class="muted small" style="margin-top:.8rem;max-width:var(--measure)">Table as printed in our paper. <i>Success</i> counts only trials that finished without any operator intervention. Four further trials completed the task after a small intervention (an object set upright or back on the table). <i>Reas.</i> is the median share of output tokens spent on reasoning. The chart plots every individual trial, including stopped ones; the table's durations follow the paper.</p>
     <div class="two-col" style="margin-top:2.5rem">
       <div class="prose">
-        <h3 style="margin-top:0">What the authors attribute the successes to</h3>
+        <h3 style="margin-top:0">What we attribute the successes to</h3>
         <p>Two things, neither ablated. First, the skills document tasks as formulas and procedures with measured values; the agent used those and re-measured values when necessary. Second, verification caught failures when they happened: a stall width that did not hold after the lift proved a grasp had failed, and the agent knew to try again. The agent recovered from a faulty assumption in 10 of the 30 successful trials.</p>
         <p>Reasoning accounted for 71% to 85% of output tokens, increasing with task complexity. The longest thinking turns followed a surprise, such as a jam or a contradiction between measurements. Trials containing them became the outliers.</p>
       </div>
@@ -307,7 +307,7 @@ HSV, body     H 104-107 S 222-255</div>
         <h3>A wrong reading of the scene</h3>
         <p>The agent named the rectangular opening the square one and kept pushing with increasing force until a protective stop. It read a standing prism as lying on its side and approached from the wrong angle. From an oblique view it measured the pink ring larger than the white one and built the tower in the wrong order. A white-ring detector returned the yellow ring and the arm pressed the rod into the table.</p>
         <div class="trials" data-trials="2b-t4,2c-t1,2c-t3,3b-t1,3b-t2"></div>
-        <div class="fix"><b>Likely remedy</b>The authors attribute these to classical computer vision on a single wrist camera and expect learned perception to address them. Untested.</div>
+        <div class="fix"><b>Likely remedy</b>We attribute these to classical computer vision on a single wrist camera and expect learned perception to address them. Untested.</div>
       </article>
       <article class="mode">
         <div class="k">2 · Anchoring</div>
@@ -432,7 +432,7 @@ w_after = bot.<span class="f">state</span>()[<span class="s">"gripper_width_m"</
 }</div>
         <h4 style="margin-top:1.6rem">Related work this builds on</h4>
         <ul class="refs" id="refs"></ul>
-        <p class="small muted" style="margin-top:1.4rem"><b>AI disclosure.</b> Parts of the manuscript text were drafted and revised with Claude Code (Fable 5.1, Opus 5.1). It was also used in drafting the skills for the framework and editing code. All AI usage happened under the authors' direction; the authors checked every stated number and claim.</p>
+        <p class="small muted" style="margin-top:1.4rem"><b>AI disclosure.</b> Parts of the manuscript text were drafted and revised with Claude Code (Fable 5.1, Opus 5.1). It was also used in drafting the skills for the framework and editing code. All AI usage happened under our direction; we checked every stated number and claim.</p>
       </div>
     </div>
   </div>
